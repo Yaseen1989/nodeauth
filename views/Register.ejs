@@ -1,0 +1,239 @@
+<% include ./partials/header1 %>
+    
+
+        <form id="myform" name="form" action="/Register" class="register" method="POST" enctype="multipart/form-data" onsubmit="return validateForm()">
+            <h1>Registration</h1>
+            <fieldset class="row1">
+                <legend>Account Details
+                </legend>
+                <p>
+                    <label>Email *
+                    </label>
+                    <input type="text" id="email" name="email" required/>
+                    <label>Repeat email *
+                    </label>
+                    <input type="text" id="remail" name="remail" required/>
+                    
+                </p>
+                <p>
+                    <label>Password*
+                    </label>
+                    <input type="password" id="password" name="password" ng-minlength="8" ng-maxlength="20" ng-pattern="/(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z])/" required  />
+                    <label>Repeat Password*
+                    </label>
+                    <input type="password" id="rpassword" name="rpassword" valid-password-c="{{formData.password===formData.password_c}}" onkeyup="checkPass(); return false;" required/>
+                    <!--<input type="password" id="rpassword" name="rpassword" ng-model="formData.password_c" valid-password-c="" required  onkeyup="checkPass(); return false;"/> -->
+                </p>
+            </fieldset>
+            <fieldset class="row2">
+                <legend>Personal Details
+                </legend>
+                <p>
+                    <label>Username *
+                    </label>
+                    <input type="text" class="long" name="username" id="username" required/>
+                   
+                </p>
+                <p>
+                    <label>Name *
+                    </label>
+                    <input type="text" class="long" name="name" id="FirstName" required/>
+                   
+                </p>
+                <p>
+                    <label>Phone *
+                    </label>
+                    <input type="text" maxlength="10" id="Phone" name="phone" required/>
+                </p>
+                <p>
+                    <label class="optional">Street
+                    </label>
+                    <input type="text" class="long" id="street" name="street" required/>
+                </p>
+                <p>
+                    <label>City *
+                    </label>
+                    <input type="text" class="long" id="city" name="city" required/>
+                </p>
+                 <p>
+                    <label>State *
+                    </label>
+                    <select name="state" id="state">
+                        <option>
+                        </option>
+                        <option>CA
+                        </option>
+                    </select>
+                </p>
+                <p>
+                    <label>Country *
+                    </label>
+                    <select name="country" id="Country">
+                        <option>
+                        </option>
+                        <option>United States
+                        </option>
+                    </select>
+                </p>
+                <p>
+                    <label>Zipcode *
+                    </label>
+                    <input type="text" id="zipcode" name="zipcode" required/>
+                </p>
+                <p>
+                    <label class="optional">Website
+                    </label>
+                    <input class="long" type="text" name="website" value="http://"/>
+
+                </p>
+                 <p>
+                    <label class="optional">up. image
+                    </label>
+                    <input type="file" name="pic">
+                </p>
+                
+            </fieldset>
+           <fieldset class="row3">
+                <legend>Further Information
+                </legend>
+                <p>
+                    <label>Gender *</label>
+                    <input name="gender" type="radio" value="Male"/><label class="gender">Male</label>
+                    <input name="gender" type="radio" value="Female"/><label class="gender">Female</label>
+                </p>
+                <p>
+                    <label>Birthdate *
+                    </label>
+                    <select name="birthdayd" class="date">
+                        <option value="1">01
+                        </option>
+                        <option value="2">02
+                        </option>
+                        <option value="3">03
+                        </option>
+                        <option value="4">04
+                        </option>
+                        <option value="5">05
+                        </option>
+                        <option value="6">06
+                        </option>
+                        <option value="7">07
+                        </option>
+                        <option value="8">08
+                        </option>
+                        <option value="9">09
+                        </option>
+                        <option value="10">10
+                        </option>
+                        <option value="11">11
+                        </option>
+                        <option value="12">12
+                        </option>
+                        <option value="13">13
+                        </option>
+                        <option value="14">14
+                        </option>
+                        <option value="15">15
+                        </option>
+                        <option value="16">16
+                        </option>
+                        <option value="17">17
+                        </option>
+                        <option value="18">18
+                        </option>
+                        <option value="19">19
+                        </option>
+                        <option value="20">20
+                        </option>
+                        <option value="21">21
+                        </option>
+                        <option value="22">22
+                        </option>
+                        <option value="23">23
+                        </option>
+                        <option value="24">24
+                        </option>
+                        <option value="25">25
+                        </option>
+                        <option value="26">26
+                        </option>
+                        <option value="27">27
+                        </option>
+                        <option value="28">28
+                        </option>
+                        <option value="29">29
+                        </option>
+                        <option value="30">30
+                        </option>
+                        <option value="31">31
+                        </option>
+                    </select>
+                    <select name="birthdaym">
+                        <option  value="1">January
+                        </option>
+                        <option value="2">February
+                        </option>
+                        <option value="3">March
+                        </option>
+                        <option value="4">April
+                        </option>
+                        <option value="5">May
+                        </option>
+                        <option value="6">June
+                        </option>
+                        <option value="7">July
+                        </option>
+                        <option value="8">August
+                        </option>
+                        <option value="9">September
+                        </option>
+                        <option value="10">October
+                        </option>
+                        <option value="11">November
+                        </option>
+                        <option value="12">December
+                        </option>
+                    </select>
+                    <input class="year" name="birthdayy" type="text" size="4" maxlength="4"/>e.g 1976
+                </p>
+                <p>
+                    <label>Nationality *
+                    </label>
+                    <select name="nat">
+                        <option value="0">
+                        </option>
+                        <option >United States
+                        </option>
+                    </select>
+                </p>
+                <br>
+                <div class="infobox"><h4>Helpful Information</h4>
+                    <p>Here comes some explaining text, sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                </div>
+            </fieldset>
+            <fieldset class="row4">
+                <legend>Terms and Mailing
+                </legend>
+                <p class="agreement">
+                    <input type="checkbox" value=""/>
+                    <label>*  I accept the <a href="#">Terms and Conditions</a></label>
+                </p>
+                <p class="agreement">
+                    <input type="checkbox" value=""/>
+                    <label>I want to receive personalized offers by your site</label>
+                </p>
+                <p class="agreement">
+                    <input type="checkbox" value=""/>
+                    <label>Allow partners to send me personalized offers and related services</label>
+                </p>
+            </fieldset>
+            <div><button name="register" class="button" ng-disabled="!myForm.$valid">Register &raquo;</button></div>
+        </form>
+    </div>
+    </body>
+</html>
+
+
+
+
+

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Resume-pro</title>
+        <script src="http://mrrio.github.io/jsPDF/dist/jspdf.debug.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <!-- CSS Stylesheet -->
+        <link rel="stylesheet" type="text/css" href="/stylesheets/resume.css" />
+
+        <!--[if lt IE 9]> 
+        <!-- <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script> -->
+        <![endif]-->
+       <!-- <script src="https://code.jquery.com/jquery-git2.min.js"></script>
+       <!-- <script>
+            $(document).ready(function(){
+                var from,to,subject,text,webT,nameN,Email,Tel,webR;
+                $("#send_email").click(function(){      
+                    to=$("#to").val();
+                    subject=$("#subject").val();
+                    text=$("#content").val();
+                    webTT=$("#S").val();
+                    nameN=$("#N").val();
+                    Email=$("#E").val();
+                    Tel=$("#T").val();
+                    webR=$("#R").val();
+                    $("#message").text("Sending E-mail...Please wait");
+                    $.get("https://webdevbootcamp-yaseen2016.c9users.io/campgrounds/newq/send",{to:to,subject:subject,text:text,webTT:webTT,nameN:nameN,Email:Email,Tel:Tel,webR:webR},function(data){
+                    if(data=="sent")
+                    {
+                        $("#message").empty().html("Email is been sent at "+to+" . Please check inbox !");
+                    }
+            
+            });
+                });
+            });
+            </script> -->
+            <script>
+    function demoFromHTML() {
+        var pdf = new jsPDF('p', 'pt', 'letter');
+        // source can be HTML-formatted string, or a reference
+        // to an actual DOM element from which the text will be scraped.
+        source = $('#contentfirst')[0];
+
+        // we support special element handlers. Register them with jQuery-style 
+        // ID selector for either ID or node name. ("#iAmID", "div", "span" etc.)
+        // There is no support for any other type of selectors 
+        // (class, of compound) at this time.
+        specialElementHandlers = {
+            // element with id of "bypass" - jQuery style selector
+            '#bypassme': function (element, renderer) {
+                // true = "handled elsewhere, bypass text extraction"
+                return true
+            }
+        };
+        margins = {
+            top: 80,
+            bottom: 60,
+            left: 40,
+            width: 522
+        };
+        // all coords and widths are in jsPDF instance's declared units
+        // 'inches' in this case
+        pdf.fromHTML(
+            source, // HTML string or DOM elem ref.
+            margins.left, // x coord
+            margins.top, { // y coord
+                'width': margins.width, // max width of content on PDF
+                'elementHandlers': specialElementHandlers
+            },
+
+            function (dispose) {
+                // dispose: object with X, Y of the last line add to the PDF 
+                //          this allow the insertion of new lines after html
+                pdf.save('Test.pdf');
+            }, margins
+        );
+    }
+</script>
+    </head>
+    <body>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Resume-pro</a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <% if(!currentUser){ %>
+                        <li><a href="/login">Login</a></li>
+                        <li><a href="/register">Sign Up</a></li>
+                    <% } else { %>
+                        <li><a href="#">Signed In As <%= currentUser.username %></a></li>
+                        <li><a href="/logout">Logout</a></li>
+                    <% } %>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container">
+       <% if(error && error.length > 0) { %>
+         <div class="alert alert-danger"><p><%=error %></p></div>
+       <% } %>
+       
+       <% if(success && success.length > 0) { %>
+         <div class="alert alert-success"><p><%= success %></p></div>
+       <% } %>
+    </div>
+    <div class="container">

@@ -1,0 +1,37 @@
+{
+  "name": "nodeauth",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Login",
+    "Authentication"
+  ],
+  "author": "Yaseen Alkhafaji",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.0",
+    "body-parser": "^1.15.2",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.3",
+    "ejs": "^2.5.5",
+    "express": "^4.14.0",
+    "express-busboy": "^4.0.0",
+    "express-messages": "^1.0.1",
+    "express-session": "^1.14.2",
+    "express-validator": "^3.1.0",
+    "method-override": "^2.3.7",
+    "mongodb": "^2.2.16",
+    "mongoose": "^4.7.2",
+    "morgan": "^1.7.0",
+    "multer": "^1.2.1",
+    "passport": "^0.3.2",
+    "passport-http": "^0.3.0",
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7",
+    "serve-favicon": "^2.3.2"
+  }
+}

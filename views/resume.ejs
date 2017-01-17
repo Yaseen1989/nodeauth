@@ -1,0 +1,30 @@
+<% include ./partials/header2 %>
+
+<page size="A4">
+    <div class="header_2">
+
+<h1><span itemprop="name"><!--Your Name--><%= currentUser.name %></span></h1>
+<h3><span itemprop="jobTitle">Web Developer / Designer</span></h3>
+
+<!-- Begin PostalAddress Schema -->
+<div itemprop="address" itemscope>
+<ul class="info_1">
+<li class="address"><span itemprop="streetAddress"><!--555 Street Address--><%= currentUser.street %></span>, <span itemprop="addressLocality"><!--Toledo--><%= currentUser.city %></span>, <span itemprop="addressRegion"><!--Ohio--><%= currentUser.state %></span>, <span itemprop="postalCode"><%= currentUser.zipcode %></span>,  <span itemprop="addressCountry"><%= currentUser.country %></span></li>
+</ul>
+</div>
+<!-- End PostalAddress Schema -->
+
+<ul class="info_2">
+<li class="phone"><span itemprop="telephone"><%= currentUser.phone %></span></li>
+<li class="email"><a href="mailto:your-email@gmail.com" itemprop="email"><%= currentUser.email %></a></li>
+<li class="site_url"><a rel="me" itemprop="url" href="http://www.webcodepro.net/about.php" title="www.your-website.com"><%= currentUser.website %></a></li>
+</ul>
+
+</div>
+<div id="contentfirst">
+   <P>Its a test</P>
+</div>
+<button onclick="javascript:demoFromHTML();">PDF</button></page>
+</div>
+</body>
+</html>

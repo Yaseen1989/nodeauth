@@ -1,0 +1,141 @@
+
+<% include ./partials/header %>
+
+<div id="cv" class="instaFade">
+	<div class="mainDetails">
+		<div id="headshot" class="quickFade">
+			<img src="/<%= currentUser.profileimage %>" alt="<%= currentUser.name %>" />
+		</div>
+		
+		<div id="name">
+			<h1 class="quickFade delayTwo"><%= currentUser.name %></h1>
+			<h2 class="quickFade delayThree">Job Title</h2>
+		</div>
+		
+		<div id="contactDetails" class="quickFade delayFour">
+			<ul>
+				<li>e: <a href="mailto:joe@bloggs.com" target="_blank"><%= currentUser.email %></a></li>
+				<li>w: <a href="http://www.bloggs.com"><%= currentUser.website %></a></li>
+				<li>m: <%= currentUser.phone %></li>
+			</ul>
+		</div>
+		<div class="clear"></div>
+	</div>
+	
+	<div id="mainArea" class="quickFade delayFive">
+		<section>
+			<article>
+				<div class="sectionTitle">
+					<h1>Personal Profile</h1>
+				</div>
+				
+				<div class="sectionContent">
+					<p>
+					    <p id="demo"></p>
+					    <button class="but" onclick="myFunction1()">Edit personal information</button>
+                        
+                    </p>
+				</div>
+			</article>
+			<div class="clear"></div>
+		</section>
+		
+		
+		<section>
+			<div class="sectionTitle">
+				<h1>Work Experience</h1>
+			</div>
+			
+			<div class="sectionContent">
+				<article>
+					<h2 id="demo1"></h2>
+					<p id="demo2"></p>
+					<p id="demo3"></p>
+        			    <div class="sectionContent1">
+        					    <button class="but" onclick="myFunction()">Add Work Experience</button>
+        					    <p></p>
+        				</div>
+				
+				</article>
+				
+				
+			</div>
+			<div class="clear"></div>
+		</section>
+		
+		
+		<section>
+			<div class="sectionTitle">
+				<h1>Key Skills</h1>
+			</div>
+			
+			<div class="sectionContent">
+				<ul class="keySkills">
+					<li>A Key Skill</li>
+					<li>A Key Skill</li>
+					<li>A Key Skill</li>
+					<li>A Key Skill</li>
+					<li>A Key Skill</li>
+					<li>A Key Skill</li>
+					<li>A Key Skill</li>
+					<li>A Key Skill</li>
+				</ul>
+			</div>
+			<div class="clear"></div>
+		</section>
+		
+		
+		<section>
+			<div class="sectionTitle">
+				<h1>Education</h1>
+			</div>
+			
+			<div class="sectionContent">
+				<article>
+					<h2>College/University</h2>
+					<p class="subDetails">Qualification</p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies massa et erat luctus hendrerit. Curabitur non consequat enim.</p>
+				</article>
+				
+				<article>
+					<h2>College/University</h2>
+					<p class="subDetails">Qualification</p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies massa et erat luctus hendrerit. Curabitur non consequat enim.</p>
+				</article>
+			</div>
+			<div class="clear"></div>
+		</section>
+		
+	</div>
+</div>
+
+
+<!-- End Wrapper -->
+<script>
+function myFunction() {
+    var Jobtitile = prompt("Please enter your Job title", "Ex: Webdeveloper");
+    var date = prompt("when did you start working there", "Ex: 12/12/1990 - Current");
+    var Desc = prompt("Please enter your Job Description", "Ex: Design and maintain client websites");
+    
+    if (Jobtitile != null || date != null || Desc != null) {
+        document.getElementById("demo1").innerHTML =
+        " " + Jobtitile + " ";
+        document.getElementById("demo2").innerHTML =
+        " " + date + " ";
+        document.getElementById("demo3").innerHTML =
+        " " + Desc + " ";
+    }
+}
+function myFunction1() {
+    var PersenalProfile = prompt("Please enter your Persenal Profile", "Ex: Webdeveloper");
+    
+    
+    if (PersenalProfile != null) {
+        document.getElementById("demo").innerHTML =
+        " " + PersenalProfile + " ";
+    }
+}
+</script>
+</div>
+</body>
+</html>
